@@ -3,6 +3,7 @@ table 50110 "CSD Seminar Reg. Header"
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 6 - Lab 1-3 & Lab 1-4
     //     - Created new table
+    // CSD1.00 - 2018-01-01 - D. E. Veloper // Chapter 7 - Lab 3-1
     Caption = 'Seminar Registration Header';
 
 
@@ -228,8 +229,8 @@ table 50110 "CSD Seminar Reg. Header"
         Field(22; Comment; Boolean)
         {
             Caption = 'Comment';
-            CalcFormula = Exist ("CSD Seminar Comment Line" where ("Table Name" = const ("Seminar Registration"),
-                                                              "No." = Field ("No.")));
+            CalcFormula = Exist ("CSD Seminar Comment Line"
+            where ("Table Name" = const ("Posted Seminar Registration"), "No." = Field ("No.")));
             Editable = false;
             FieldClass = FlowField;
         }
@@ -286,6 +287,17 @@ table 50110 "CSD Seminar Reg. Header"
         Field(28; "Posting No."; Code[20])
         {
             Caption = 'Posting No.';
+        }
+        Field(29; "User Id"; Code[50])
+        {
+            Caption = 'User Id';
+            TableRelation = User;
+            ValidateTableRelation = false;
+        }
+        Field(30; "Source Code"; Code[10])
+        {
+            Caption = 'Source Code';
+            TableRelation = "Source Code";
         }
     }
 
