@@ -4,6 +4,7 @@ table 50110 "CSD Seminar Reg. Header"
     //   Chapter 6 - Lab 1-3 & Lab 1-4
     //     - Created new table
     // CSD1.00 - 2018-01-01 - D. E. Veloper // Chapter 7 - Lab 3-1
+    // Chapter 9 - Lab 1-1 // - Added new field "No. Printed
     Caption = 'Seminar Registration Header';
 
 
@@ -298,6 +299,11 @@ table 50110 "CSD Seminar Reg. Header"
         {
             Caption = 'Source Code';
             TableRelation = "Source Code";
+        }
+        Field(40; "No. Printed"; Integer)
+        {
+            Caption = 'No. Printed';
+            Editable = false;
         }
     }
 
